@@ -83,13 +83,19 @@ export default function EventsPage() {
   const { toast } = useToast();
 
   const handleBooking = (eventId: number) => {
+    const eventToBook = events.find(event => event.id === eventId);
+    if (!eventToBook || eventToBook.seats_left <= 0 || eventToBook.isBooked) {
+      return;
+    }
+
+    toast({
+      title: "Successfully Booked!",
+      description: `You're confirmed for "${eventToBook.title}".`,
+    });
+
     setEvents(prevEvents => 
       prevEvents.map(event => {
-        if (event.id === eventId && event.seats_left > 0 && !event.isBooked) {
-          toast({
-            title: "Successfully Booked!",
-            description: `You're confirmed for "${event.title}".`,
-          });
+        if (event.id === eventId) {
           return { ...event, seats_left: event.seats_left - 1, isBooked: true };
         }
         return event;
