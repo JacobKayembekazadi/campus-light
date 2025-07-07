@@ -78,7 +78,7 @@ export default function Home() {
   return (
     <div className="flex flex-col min-h-screen">
       <main className="flex-1">
-        <section className="relative w-full h-[70vh] min-h-[500px] max-h-[700px] flex items-center justify-center text-white">
+        <section className="relative w-full h-[85vh] min-h-[500px] max-h-[800px] flex items-center justify-center text-white">
           <Image
             src="https://placehold.co/1600x900.png"
             alt="A group of diverse students celebrating on a university campus at sunset."
@@ -89,20 +89,20 @@ export default function Home() {
           />
           <div className="absolute inset-0 bg-gradient-to-t from-black/70 to-black/30" />
           <div className="relative z-10 container mx-auto max-w-7xl px-4 text-center">
-            <h1 className="font-headline text-4xl font-bold tracking-tighter sm:text-5xl md:text-6xl lg:text-7xl">
+            <h1 className="font-headline text-5xl font-bold tracking-tighter sm:text-6xl md:text-7xl">
               Light Your Path to Success
             </h1>
             <p className="mx-auto mt-4 max-w-[700px] text-lg text-gray-200 md:text-xl">
               Your go-to companion for every stage of campus life. We equip you with practical skills, emotional resilience, and a supportive network to thrive.
             </p>
-            <div className="mt-8 flex justify-center gap-4">
-              <Link href="/events">
-                <Button size="lg" style={{backgroundColor: 'hsl(var(--accent))', color: 'hsl(var(--accent-foreground))'}} className="hover:opacity-90 shadow-lg shadow-amber-500/20">
+            <div className="mt-8 flex flex-col items-center justify-center gap-4 sm:flex-row">
+              <Link href="/events" className="w-full max-w-xs sm:w-auto">
+                <Button size="lg" style={{backgroundColor: 'hsl(var(--accent))', color: 'hsl(var(--accent-foreground))'}} className="w-full hover:opacity-90 shadow-lg shadow-amber-500/20">
                   Upcoming Events
                 </Button>
               </Link>
-              <Link href="/about">
-                <Button size="lg" variant="outline" className="bg-transparent border-white text-white hover:bg-white hover:text-black transition-colors">
+              <Link href="/about" className="w-full max-w-xs sm:w-auto">
+                <Button size="lg" variant="outline" className="w-full bg-transparent border-white text-white hover:bg-white hover:text-black transition-colors">
                   Learn More
                 </Button>
               </Link>
@@ -110,7 +110,7 @@ export default function Home() {
           </div>
         </section>
 
-        <section id="features" className="w-full py-12 md:py-24 lg:py-32">
+        <section id="features" className="w-full py-16 md:py-24 lg:py-32">
           <div className="container mx-auto max-w-7xl px-4">
             <div className="mb-12 text-center">
               <h2 className="font-headline text-3xl font-bold tracking-tighter sm:text-4xl">Everything You Need to Shine</h2>
@@ -144,26 +144,28 @@ export default function Home() {
           </div>
         </section>
 
-        <section className="w-full py-12 md:py-24 lg:py-32">
+        <section className="w-full py-16 md:py-24 lg:py-32">
             <div className="container mx-auto grid max-w-7xl grid-cols-1 items-center gap-x-16 gap-y-16 px-4 lg:grid-cols-2">
-                <div className="lg:pr-8 text-center lg:text-left">
+                <div className="lg:pr-8 text-center lg:text-left order-2 lg:order-1">
                     <h2 className="font-headline text-3xl font-bold tracking-tight text-foreground sm:text-4xl">More Than an Organization. A Community.</h2>
                     <p className="mt-6 text-lg leading-8 text-muted-foreground">
                         Light on Campus began with a simple idea: college should be about more than just lectures and exams. We saw a need for a space where students could find practical life skills, genuine support, and a community that cheers them on. That's why we're here—a student-run organization dedicated to helping you navigate every part of campus life with confidence and joy.
                     </p>
                 </div>
-                 <Image
-                    src="https://placehold.co/800x600.png"
-                    data-ai-hint="students community"
-                    alt="A diverse group of students working together and smiling"
-                    width={800}
-                    height={600}
-                    className="w-full rounded-xl shadow-lg"
-                />
+                 <div className="order-1 lg:order-2">
+                    <Image
+                        src="https://placehold.co/800x600.png"
+                        data-ai-hint="students community"
+                        alt="A diverse group of students working together and smiling"
+                        width={800}
+                        height={600}
+                        className="w-full rounded-xl shadow-lg"
+                    />
+                 </div>
             </div>
         </section>
 
-        <section id="testimonials" className="w-full bg-secondary/50 py-12 md:py-24 lg:py-32">
+        <section id="testimonials" className="w-full bg-secondary/50 py-16 md:py-24 lg:py-32">
           <div className="container mx-auto max-w-7xl px-4">
             <div className="mb-12 text-center">
               <h2 className="font-headline text-3xl font-bold tracking-tighter sm:text-4xl">Loved by Students Like You</h2>
@@ -195,8 +197,8 @@ export default function Home() {
                   </CarouselItem>
                 ))}
               </CarouselContent>
-              <CarouselPrevious className="ml-12" />
-              <CarouselNext className="mr-12" />
+              <CarouselPrevious className="ml-12 hidden md:flex" />
+              <CarouselNext className="mr-12 hidden md:flex" />
             </Carousel>
           </div>
         </section>
