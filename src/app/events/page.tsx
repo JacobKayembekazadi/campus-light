@@ -135,7 +135,7 @@ export default function EventsPage() {
                       </CardHeader>
                       <CardContent className="flex-grow space-y-3">
                         <div className="flex items-center text-sm text-muted-foreground">
-                          <Calendar className="mr-2 h-4 w-4 flex-shrink-0" /> <span>{new Date(event.date).toLocaleDateString('en-US', { year: 'numeric', month: 'long', day: 'numeric' })}</span>
+                          <Calendar className="mr-2 h-4 w-4 flex-shrink-0" /> <span>{new Date(event.date).toLocaleDateString('en-US', { year: 'numeric', month: 'long', day: 'numeric', timeZone: 'UTC' })}</span>
                         </div>
                         <div className="flex items-center text-sm text-muted-foreground">
                           <Clock className="mr-2 h-4 w-4 flex-shrink-0" /> <span>{event.time}</span>
