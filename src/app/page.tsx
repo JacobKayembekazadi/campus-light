@@ -78,12 +78,21 @@ export default function Home() {
   return (
     <div className="flex flex-col min-h-screen">
       <main className="flex-1">
-        <section className="relative w-full py-20 md:py-32 lg:py-40 bg-gradient-to-br from-background to-secondary/30">
-          <div className="container mx-auto max-w-7xl px-4 text-center">
+        <section className="relative w-full h-[70vh] min-h-[500px] max-h-[700px] flex items-center justify-center text-white">
+          <Image
+            src="https://placehold.co/1600x900.png"
+            alt="A group of diverse students celebrating on a university campus at sunset."
+            data-ai-hint="students celebrating"
+            fill
+            className="object-cover"
+            priority
+          />
+          <div className="absolute inset-0 bg-gradient-to-t from-black/70 to-black/30" />
+          <div className="relative z-10 container mx-auto max-w-7xl px-4 text-center">
             <h1 className="font-headline text-4xl font-bold tracking-tighter sm:text-5xl md:text-6xl lg:text-7xl">
               Graduate with Confidence
             </h1>
-            <p className="mx-auto mt-4 max-w-[700px] text-lg text-muted-foreground md:text-xl">
+            <p className="mx-auto mt-4 max-w-[700px] text-lg text-gray-200 md:text-xl">
               Your go-to companion for every stage of campus life. We provide the skills, community, and support you need to thrive.
             </p>
             <div className="mt-8 flex justify-center gap-4">
@@ -93,13 +102,12 @@ export default function Home() {
                 </Button>
               </Link>
               <Link href="/about">
-                <Button size="lg" variant="outline">
+                <Button size="lg" variant="outline" className="bg-transparent border-white text-white hover:bg-white hover:text-black transition-colors">
                   Learn More
                 </Button>
               </Link>
             </div>
           </div>
-          <div className="absolute inset-0 -z-10 h-full w-full bg-[radial-gradient(hsl(var(--primary)/0.1)_1px,transparent_1px)] [background-size:16px_16px]"></div>
         </section>
 
         <section id="features" className="w-full py-12 md:py-24 lg:py-32">
