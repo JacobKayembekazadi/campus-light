@@ -4,6 +4,10 @@ import Link from "next/link";
 import { Menu, BookOpen, GraduationCap, Users, Newspaper, BrainCircuit, PenSquare, LayoutGrid } from "lucide-react";
 import { Button } from "@/components/ui/button";
 import { Sheet, SheetContent, SheetTrigger } from "@/components/ui/sheet";
+import { Dialog, DialogContent, DialogHeader, DialogTitle, DialogDescription, DialogFooter, DialogTrigger } from "@/components/ui/dialog";
+import { Input } from "@/components/ui/input";
+import { Label } from "@/components/ui/label";
+import { Tabs, TabsContent, TabsList, TabsTrigger } from "@/components/ui/tabs";
 import React from "react";
 
 const navLinks = [
@@ -33,13 +37,12 @@ export function Header() {
           ))}
         </nav>
         <div className="hidden md:flex items-center gap-2">
-          <Button variant="ghost">Log In</Button>
-          <Button style={{backgroundColor: 'hsl(var(--accent))', color: 'hsl(var(--accent-foreground))'}} className="hover:opacity-90">Sign Up</Button>
+          <AuthButtons />
         </div>
         <div className="md:hidden">
           <Sheet open={isMenuOpen} onOpenChange={setIsMenuOpen}>
             <SheetTrigger asChild>
-              <Button variant="outline" size="icon">
+              <Button variant="outline" size="icon" aria-label="Open menu">
                 <Menu className="h-6 w-6" />
                 <span className="sr-only">Open menu</span>
               </Button>
@@ -59,8 +62,7 @@ export function Header() {
                   ))}
                 </nav>
                 <div className="mt-8 flex flex-col gap-4">
-                   <Button variant="ghost" className="w-full">Log In</Button>
-                   <Button style={{backgroundColor: 'hsl(var(--accent))', color: 'hsl(var(--accent-foreground))'}} className="hover:opacity-90 w-full">Sign Up</Button>
+                   <AuthButtons mobile onCloseMenu={() => setIsMenuOpen(false)}/>
                 </div>
               </div>
             </SheetContent>
@@ -68,5 +70,88 @@ export function Header() {
         </div>
       </div>
     </header>
+  );
+}
+
+function AuthButtons({ mobile = false, onCloseMenu }: { mobile?: boolean; onCloseMenu?: () => void; }) {
+  const [isAuthOpen, setIsAuthOpen] = React.useState(false);
+  
+  const handleAuthClick = (e: React.MouseEvent<HTMLButtonElement>) => {
+    // We need to stop propagation on the mobile menu, otherwise it closes the sheet
+    if (mobile) {
+      e.stopPropagation();
+    }
+  };
+
+  const closeAll = () => {
+    setIsAuthOpen(false);
+    if (onCloseMenu) {
+      onCloseMenu();
+    }
+  };
+
+  return (
+    <Dialog open={isAuthOpen} onOpenChange={setIsAuthOpen}>
+      <DialogTrigger asChild>
+         <div className={mobile ? "contents" : "flex items-center gap-2"}>
+            <Button variant="ghost" className={mobile ? "w-full" : ""}>Log In</Button>
+            <Button style={{backgroundColor: 'hsl(var(--accent))', color: 'hsl(var(--accent-foreground))'}} className={`hover:opacity-90 ${mobile ? 'w-full' : ''}`}>Sign Up</Button>
+         </div>
+      </DialogTrigger>
+      <DialogContent className="sm:max-w-[425px]" onPointerDownOutside={(e) => {
+        // This is a workaround to allow clicking the dialog trigger from within the sheet on mobile
+        if(mobile && (e.target as HTMLElement).closest('[role="dialog"]')) {
+           e.preventDefault();
+        }
+      }}>
+        <Tabs defaultValue="login" className="w-full">
+          <DialogHeader>
+            <DialogTitle asChild>
+                <TabsList className="grid w-full grid-cols-2">
+                    <TabsTrigger value="login">Log In</TabsTrigger>
+                    <TabsTrigger value="signup">Sign Up</TabsTrigger>
+                </TabsList>
+            </DialogTitle>
+             <DialogDescription className="pt-4 text-center">
+              Welcome! Please enter your details to continue.
+            </DialogDescription>
+          </DialogHeader>
+          <TabsContent value="login" className="pt-4">
+             <form onSubmit={(e) => { e.preventDefault(); closeAll(); }}>
+                <div className="grid gap-4">
+                  <div className="grid gap-2">
+                    <Label htmlFor="email-login">Email</Label>
+                    <Input id="email-login" type="email" placeholder="m@example.com" required />
+                  </div>
+                  <div className="grid gap-2">
+                    <Label htmlFor="password-login">Password</Label>
+                    <Input id="password-login" type="password" required />
+                  </div>
+                </div>
+                <DialogFooter className="mt-4">
+                  <Button type="submit" className="w-full">Log In</Button>
+                </DialogFooter>
+             </form>
+          </TabsContent>
+          <TabsContent value="signup" className="pt-4">
+            <form onSubmit={(e) => { e.preventDefault(); closeAll(); }}>
+                <div className="grid gap-4">
+                  <div className="grid gap-2">
+                    <Label htmlFor="email-signup">Email</Label>
+                    <Input id="email-signup" type="email" placeholder="m@example.com" required/>
+                  </div>
+                  <div className="grid gap-2">
+                    <Label htmlFor="password-signup">Password</Label>
+                    <Input id="password-signup" type="password" required />
+                  </div>
+                </div>
+                <DialogFooter className="mt-4">
+                  <Button type="submit" className="w-full">Create Account</Button>
+                </DialogFooter>
+            </form>
+          </TabsContent>
+        </Tabs>
+      </DialogContent>
+    </Dialog>
   );
 }

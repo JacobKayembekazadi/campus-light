@@ -12,10 +12,10 @@ export function Footer() {
           </div>
           <p className="text-sm text-muted-foreground">© {new Date().getFullYear()} Campus Companion. All rights reserved.</p>
           <nav className="flex flex-wrap justify-center gap-x-4 gap-y-2">
-            <Link href="#" className="text-sm hover:underline">About</Link>
-            <Link href="#" className="text-sm hover:underline">Contact</Link>
-            <Link href="#" className="text-sm hover:underline">Privacy Policy</Link>
-            <Link href="#" className="text-sm hover:underline">Terms of Service</Link>
+            <Link href="/" className="text-sm hover:underline">About</Link>
+            <Link href="/" className="text-sm hover:underline">Contact</Link>
+            <Link href="/" className="text-sm hover:underline">Privacy Policy</Link>
+            <Link href="/" className="text-sm hover:underline">Terms of Service</Link>
           </nav>
         </div>
       </div>

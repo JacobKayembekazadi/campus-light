@@ -1,3 +1,5 @@
+"use client";
+
 import { Button } from "@/components/ui/button";
 import { Card, CardContent, CardDescription, CardFooter, CardHeader, CardTitle } from "@/components/ui/card";
 import { Download, FileText, ListChecks, Presentation } from "lucide-react";
@@ -43,6 +45,19 @@ const resources = [
 ];
 
 export default function ResourcesPage() {
+  const handleDownload = (resource: typeof resources[0]) => {
+    const content = `Resource: ${resource.title}\n\n${resource.description}`;
+    const blob = new Blob([content], { type: 'text/plain' });
+    const url = URL.createObjectURL(blob);
+    const a = document.createElement('a');
+    a.href = url;
+    a.download = `${resource.title.toLowerCase().replace(/[\s\(\)]+/g, '-')}.txt`;
+    document.body.appendChild(a);
+    a.click();
+    document.body.removeChild(a);
+    URL.revokeObjectURL(url);
+  };
+
   return (
     <div className="container mx-auto max-w-7xl px-4 py-12">
       <div className="text-center mb-12">
@@ -59,7 +74,7 @@ export default function ResourcesPage() {
           <Card key={index} className="flex flex-col justify-between transform transition-transform duration-300 hover:-translate-y-2 hover:shadow-xl">
             <CardHeader>
               <div className="flex items-start justify-between">
-                <div className="flex h-12 w-12 items-center justify-center rounded-full bg-primary/10 text-primary flex-shrink-0">
+                <div className="flex h-12 w-12 items-center justify-center rounded-full bg-primary/10 text-primary flex-shrink-0" aria-hidden="true">
                   <resource.icon className="h-6 w-6" />
                 </div>
                 <Badge variant="outline">{resource.type}</Badge>
@@ -70,7 +85,7 @@ export default function ResourcesPage() {
               <p className="text-muted-foreground">{resource.description}</p>
             </CardContent>
             <CardFooter>
-              <Button className="w-full">
+              <Button className="w-full" onClick={() => handleDownload(resource)}>
                 <Download className="mr-2 h-4 w-4" />
                 Download
               </Button>

@@ -1,10 +1,15 @@
+"use client";
+
+import { useState } from "react";
 import { Button } from "@/components/ui/button";
 import { Card, CardContent, CardFooter, CardHeader, CardTitle, CardDescription } from "@/components/ui/card";
 import { Tabs, TabsContent, TabsList, TabsTrigger } from "@/components/ui/tabs";
-import { Calendar, Clock, MapPin, Users } from "lucide-react";
+import { useToast } from "@/hooks/use-toast";
+import { Calendar, Clock, MapPin, Users, CheckCircle } from "lucide-react";
 
-const events = [
+const eventsData = [
   {
+    id: 1,
     category: "workshops",
     title: "CV & Cover Letter Clinic",
     description: "Get expert feedback on your CV and learn to write compelling cover letters that get noticed.",
@@ -15,6 +20,7 @@ const events = [
     seats_total: 30,
   },
   {
+    id: 2,
     category: "seminars",
     title: "Dining Room Etiquette",
     description: "Master the art of dining in formal and casual settings, including cultural nuances.",
@@ -25,6 +31,7 @@ const events = [
     seats_total: 100,
   },
   {
+    id: 3,
     category: "tours",
     title: "Tech Industry Visit: Innovate Corp",
     description: "An exclusive look into one of the leading tech companies. Network with engineers and recruiters.",
@@ -35,6 +42,7 @@ const events = [
     seats_total: 25,
   },
   {
+    id: 4,
     category: "workshops",
     title: "Public Speaking Bootcamp",
     description: "Build confidence and conquer stage fright with practical exercises and coaching.",
@@ -45,6 +53,7 @@ const events = [
     seats_total: 40,
   },
    {
+    id: 5,
     category: "seminars",
     title: "Financial Fitness: Student Investing",
     description: "Learn the basics of investing, from stocks to crypto, tailored for a student budget.",
@@ -55,6 +64,7 @@ const events = [
     seats_total: 200,
   },
   {
+    id: 6,
     category: "tours",
     title: "Museum of Modern Art Edutainment Tour",
     description: "A guided tour focusing on the intersection of art, history, and social change.",
@@ -69,6 +79,24 @@ const events = [
 const categories = ["all", "workshops", "seminars", "tours"];
 
 export default function EventsPage() {
+  const [events, setEvents] = useState(eventsData.map(e => ({ ...e, isBooked: false })));
+  const { toast } = useToast();
+
+  const handleBooking = (eventId: number) => {
+    setEvents(prevEvents => 
+      prevEvents.map(event => {
+        if (event.id === eventId && event.seats_left > 0 && !event.isBooked) {
+          toast({
+            title: "Successfully Booked!",
+            description: `You're confirmed for "${event.title}".`,
+          });
+          return { ...event, seats_left: event.seats_left - 1, isBooked: true };
+        }
+        return event;
+      })
+    );
+  };
+
   return (
     <div className="bg-secondary/30 min-h-screen">
       <div className="container mx-auto max-w-7xl px-4 py-12">
@@ -93,8 +121,8 @@ export default function EventsPage() {
                 <div className="grid grid-cols-1 gap-6 sm:grid-cols-2 lg:grid-cols-3 mt-8">
                   {events
                     .filter(event => cat === 'all' || event.category === cat)
-                    .map((event, index) => (
-                    <Card key={index} className="flex flex-col transform transition-transform duration-300 hover:-translate-y-2 hover:shadow-xl">
+                    .map((event) => (
+                    <Card key={event.id} className="flex flex-col transform transition-transform duration-300 hover:-translate-y-2 hover:shadow-xl">
                       <CardHeader>
                         <CardTitle className="font-headline">{event.title}</CardTitle>
                         <CardDescription>{event.description}</CardDescription>
@@ -116,8 +144,18 @@ export default function EventsPage() {
                            <span className="font-semibold">{event.seats_left}</span>
                            <span className="text-muted-foreground">/{event.seats_total} seats left</span>
                          </div>
-                        <Button disabled={event.seats_left === 0} style={{backgroundColor: 'hsl(var(--accent))', color: 'hsl(var(--accent-foreground))'}} className="hover:opacity-90 disabled:opacity-50 disabled:cursor-not-allowed">
-                          {event.seats_left === 0 ? "Full" : "Book Now"}
+                        <Button 
+                          onClick={() => handleBooking(event.id)}
+                          disabled={event.seats_left === 0 || event.isBooked} 
+                          style={!event.isBooked ? {backgroundColor: 'hsl(var(--accent))', color: 'hsl(var(--accent-foreground))'} : {}}
+                          variant={event.isBooked ? 'outline' : 'default'}
+                          className="hover:opacity-90 disabled:opacity-50 disabled:cursor-not-allowed"
+                        >
+                          {event.isBooked ? (
+                            <>
+                              <CheckCircle className="mr-2 h-4 w-4"/> Booked
+                            </>
+                          ) : event.seats_left === 0 ? "Full" : "Book Now"}
                         </Button>
                       </CardFooter>
                     </Card>
