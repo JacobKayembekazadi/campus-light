@@ -45,7 +45,7 @@ export default function BlogPage() {
           Blog & Media
         </h1>
         <p className="mt-4 max-w-2xl mx-auto text-lg text-muted-foreground">
-          Articles, stories, and insights from the Campus Companion community.
+          Articles, stories, and insights from the Light on Campus community.
         </p>
       </div>
       

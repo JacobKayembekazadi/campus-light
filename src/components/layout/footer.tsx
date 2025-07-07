@@ -10,7 +10,7 @@ export function Footer() {
           <div className="md:col-span-1">
             <Link href="/" className="flex items-center justify-center md:justify-start gap-2 mb-4">
               <GraduationCap className="h-8 w-8 text-primary" />
-              <span className="font-headline text-2xl font-bold">Campus Companion</span>
+              <span className="font-headline text-2xl font-bold">Light on Campus</span>
             </Link>
             <p className="text-muted-foreground text-sm">
               Your go-to companion for every stage of campus life.
@@ -49,14 +49,14 @@ export function Footer() {
               <Link href="#" aria-label="LinkedIn"><Linkedin className="h-6 w-6 text-muted-foreground hover:text-primary" /></Link>
             </div>
             <p className="text-sm text-muted-foreground">
-              <a href="mailto:hello@campuscompanion.com" className="hover:text-primary">hello@campuscompanion.com</a>
+              <a href="mailto:hello@lightoncampus.com" className="hover:text-primary">hello@lightoncampus.com</a>
             </p>
           </div>
         </div>
 
         {/* Bottom Bar */}
         <div className="mt-12 border-t pt-8 flex flex-col items-center justify-between gap-4 md:flex-row">
-            <p className="text-sm text-muted-foreground text-center md:text-left">© {new Date().getFullYear()} Campus Companion. All rights reserved.</p>
+            <p className="text-sm text-muted-foreground text-center md:text-left">© {new Date().getFullYear()} Light on Campus. All rights reserved.</p>
             <div className="flex items-center gap-4">
               <Link href="/privacy" className="text-sm text-muted-foreground hover:text-primary">Privacy Policy</Link>
               <Link href="/terms" className="text-sm text-muted-foreground hover:text-primary">Terms of Service</Link>

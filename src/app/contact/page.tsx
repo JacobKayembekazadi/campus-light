@@ -55,7 +55,7 @@ export default function ContactPage() {
               <div>
                 <h3 className="text-xl font-semibold font-headline">Email</h3>
                 <p className="text-muted-foreground mt-1">For general inquiries and support, please email us.</p>
-                <a href="mailto:hello@campuscompanion.com" className="text-primary hover:underline mt-2 inline-block">hello@campuscompanion.com</a>
+                <a href="mailto:hello@lightoncampus.com" className="text-primary hover:underline mt-2 inline-block">hello@lightoncampus.com</a>
               </div>
             </div>
             <div className="flex items-start gap-4">

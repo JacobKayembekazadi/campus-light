@@ -82,7 +82,7 @@ export default function ForumPage() {
             Community Forum
           </h1>
           <p className="mt-4 max-w-2xl mx-auto text-lg text-muted-foreground">
-            Ask questions, share advice, and connect with your peers.
+            Ask questions, share advice, and connect with your peers in a safe and inclusive space.
           </p>
         </div>
         

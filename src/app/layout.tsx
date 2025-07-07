@@ -5,8 +5,8 @@ import { Footer } from '@/components/layout/footer';
 import { Toaster } from "@/components/ui/toaster"
 
 export const metadata: Metadata = {
-  title: 'Campus Companion',
-  description: 'Your go-to companion for every stage of campus life.',
+  title: 'Light on Campus',
+  description: 'Your go-to companion for every stage of campus life. We light every campus with confident, well-rounded graduates.',
 };
 
 export default function RootLayout({

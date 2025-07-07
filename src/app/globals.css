@@ -50,8 +50,8 @@
   }
 
   .dark {
-    --background: 0 0% 13%;
-    --foreground: 0 0% 98%;
+    --background: 0 0% 13%; /* Midnight Ink #212121 */
+    --foreground: 0 0% 98%; /* Warm White #F9F9F9 */
 
     --card: 0 0% 16%;
     --card-foreground: 0 0% 98%;
@@ -59,7 +59,7 @@
     --popover: 0 0% 13%;
     --popover-foreground: 0 0% 98%;
 
-    --primary: 168 82% 52%;
+    --primary: 168 82% 52%; /* Electric Mint #1DE9B6 */
     --primary-foreground: 0 0% 13%;
 
     --secondary: 0 0% 20%;
@@ -68,7 +68,7 @@
     --muted: 0 0% 20%;
     --muted-foreground: 0 0% 63.9%;
     
-    --accent: 45 100% 57%;
+    --accent: 45 100% 57%; /* Amber #FFCA28 */
     --accent-foreground: 0 0% 13%;
 
     --destructive: 0 62.8% 30.6%;

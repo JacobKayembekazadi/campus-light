@@ -12,7 +12,7 @@ export default function PrivacyPolicyPage() {
         </div>
         
         <div className="space-y-6 text-muted-foreground leading-relaxed">
-            <p>Your privacy is important to us. It is Campus Companion's policy to respect your privacy regarding any information we may collect from you across our website, and other sites we own and operate.</p>
+            <p>Your privacy is important to us. It is Light on Campus's policy to respect your privacy regarding any information we may collect from you across our website, and other sites we own and operate.</p>
             
             <h2 className="font-headline text-2xl text-foreground font-bold pt-4">1. Information We Collect</h2>
             <p>We only ask for personal information when we truly need it to provide a service to you. We collect it by fair and lawful means, with your knowledge and consent. We also let you know why we’re collecting it and how it will be used.</p>
@@ -25,7 +25,7 @@ export default function PrivacyPolicyPage() {
             <p>We only retain collected information for as long as necessary to provide you with your requested service. What data we store, we’ll protect within commercially acceptable means to prevent loss and theft, as well as unauthorized access, disclosure, copying, use or modification.</p>
 
             <h2 className="font-headline text-2xl text-foreground font-bold pt-4">4. Cookies</h2>
-            <p>We use cookies to help improve your experience of our website. This cookie policy is part of Campus Companion's privacy policy, and covers the use of cookies between your device and our site.</p>
+            <p>We use cookies to help improve your experience of our website. This cookie policy is part of Light on Campus's privacy policy, and covers the use of cookies between your device and our site.</p>
 
             <h2 className="font-headline text-2xl text-foreground font-bold pt-4">5. Your Rights</h2>
             <p>You are free to refuse our request for your personal information, with the understanding that we may be unable to provide you with some of your desired services. You have the right to access, update, or delete your personal information at any time by contacting us.</p>

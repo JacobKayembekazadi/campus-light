@@ -55,22 +55,22 @@ const testimonials = [
   {
     name: "Freshman Faith",
     role: "First-Year Student",
-    testimonial: "Campus Companion was a lifesaver in my first year! The orientation tips and community forum helped me feel at home right away."
+    testimonial: "Light on Campus was a lifesaver in my first year! The orientation tips and community forum helped me find my people and feel at home right away."
   },
   {
     name: "Second-Year Sam",
     role: "Engineering Student",
-    testimonial: "The AI resume builder is pure magic. It helped me land an internship by tailoring my resume perfectly for the job description."
+    testimonial: "The AI resume builder is pure magic. It helped me land an internship by tailoring my resume perfectly for the job description. The etiquette guides were a bonus!"
   },
   {
     name: "Final-Year Femi",
     role: "Business Major",
-    testimonial: "From interview prep to networking events, this platform gave me the confidence to step into the professional world. Highly recommended!"
+    testimonial: "From interview prep to networking events, this platform gave me the confidence to step into the professional world. Highly recommended for all final-year students!"
   },
     {
     name: "Post-Grad Priya",
     role: "Teaching Assistant",
-    testimonial: "As a new TA, the resources on mentorship and professional skills have been invaluable. It's great for grad students too."
+    testimonial: "As a new TA, the resources on mentorship and professional skills have been invaluable. It's great for grad students looking to level up."
   }
 ];
 
@@ -82,7 +82,7 @@ export default function Home() {
           <Image
             src="https://placehold.co/1600x900.png"
             alt="A group of diverse students celebrating on a university campus at sunset."
-            data-ai-hint="students celebrating"
+            data-ai-hint="diverse students celebrating"
             fill
             className="object-cover"
             priority
@@ -90,10 +90,10 @@ export default function Home() {
           <div className="absolute inset-0 bg-gradient-to-t from-black/70 to-black/30" />
           <div className="relative z-10 container mx-auto max-w-7xl px-4 text-center">
             <h1 className="font-headline text-4xl font-bold tracking-tighter sm:text-5xl md:text-6xl lg:text-7xl">
-              Graduate with Confidence
+              Light Your Path to Success
             </h1>
             <p className="mx-auto mt-4 max-w-[700px] text-lg text-gray-200 md:text-xl">
-              Your go-to companion for every stage of campus life. We provide the skills, community, and support you need to thrive.
+              Your go-to companion for every stage of campus life. We equip you with practical skills, emotional resilience, and a supportive network to thrive.
             </p>
             <div className="mt-8 flex justify-center gap-4">
               <Link href="/events">
@@ -113,7 +113,7 @@ export default function Home() {
         <section id="features" className="w-full py-12 md:py-24 lg:py-32">
           <div className="container mx-auto max-w-7xl px-4">
             <div className="mb-12 text-center">
-              <h2 className="font-headline text-3xl font-bold tracking-tighter sm:text-4xl">Everything You Need to Succeed</h2>
+              <h2 className="font-headline text-3xl font-bold tracking-tighter sm:text-4xl">Everything You Need to Shine</h2>
               <p className="mx-auto mt-4 max-w-[700px] text-muted-foreground md:text-lg">
                 From academic skills to career prep, we've got you covered.
               </p>
@@ -149,7 +149,7 @@ export default function Home() {
             <div className="mb-12 text-center">
               <h2 className="font-headline text-3xl font-bold tracking-tighter sm:text-4xl">Loved by Students Like You</h2>
               <p className="mx-auto mt-4 max-w-[700px] text-muted-foreground md:text-lg">
-                Real stories from students who've grown with Campus Companion.
+                Real stories from students who've grown with Light on Campus.
               </p>
             </div>
             <Carousel opts={{ align: "start", loop: true, }} className="w-full">

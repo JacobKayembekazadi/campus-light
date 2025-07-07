@@ -27,7 +27,7 @@ export function Header() {
       <div className="container flex h-16 max-w-7xl items-center justify-between px-4">
         <Link href="/" className="flex items-center gap-2">
           <GraduationCap className="h-6 w-6 text-primary" />
-          <span className="font-headline text-xl font-bold">Campus Companion</span>
+          <span className="font-headline text-xl font-bold">Light on Campus</span>
         </Link>
         <nav className="hidden md:flex items-center gap-6">
           {navLinks.map((link) => (
@@ -51,7 +51,7 @@ export function Header() {
               <div className="p-4">
                 <Link href="/" className="mb-8 flex items-center gap-2" onClick={() => setIsMenuOpen(false)}>
                   <GraduationCap className="h-6 w-6 text-primary" />
-                  <span className="font-headline text-xl font-bold">Campus Companion</span>
+                  <span className="font-headline text-xl font-bold">Light on Campus</span>
                 </Link>
                 <nav className="flex flex-col gap-6">
                   {navLinks.map((link) => (
