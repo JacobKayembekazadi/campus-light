@@ -19,8 +19,8 @@ export default function AboutPage() {
         <div className="mt-16">
           <Image
             src="https://placehold.co/1200x600.png"
-            alt="Diverse group of students collaborating and looking happy"
-            data-ai-hint="diverse students collaborating"
+            data-ai-hint="university campus students"
+            alt="Students gathered on campus with lights"
             width={1200}
             height={600}
             className="rounded-xl shadow-lg"
@@ -47,6 +47,24 @@ export default function AboutPage() {
                 To light every campus with confident, well-rounded graduates who are ready to make a positive impact on the world.
               </p>
             </div>
+        </div>
+
+        {/* More Than a Community Section */}
+        <div className="mx-auto mt-24 grid max-w-7xl grid-cols-1 items-center gap-x-16 gap-y-16 lg:grid-cols-2">
+            <div className="lg:pr-8">
+                <h2 className="font-headline text-3xl font-bold tracking-tight text-foreground sm:text-4xl">More Than an Organization. A Community.</h2>
+                <p className="mt-6 text-lg leading-8 text-muted-foreground">
+                    Light on Campus began with a simple idea: college should be about more than just lectures and exams. We saw a need for a space where students could find practical life skills, genuine support, and a community that cheers them on. That's why we're here—a student-run organization dedicated to helping you navigate every part of campus life with confidence and joy.
+                </p>
+            </div>
+             <Image
+                src="https://placehold.co/800x600.png"
+                data-ai-hint="students community"
+                alt="A diverse group of students working together and smiling"
+                width={800}
+                height={600}
+                className="w-full rounded-xl shadow-lg"
+            />
         </div>
 
         {/* Values */}
