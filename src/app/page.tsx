@@ -144,6 +144,25 @@ export default function Home() {
           </div>
         </section>
 
+        <section className="w-full py-12 md:py-24 lg:py-32">
+            <div className="container mx-auto grid max-w-7xl grid-cols-1 items-center gap-x-16 gap-y-16 px-4 lg:grid-cols-2">
+                <div className="lg:pr-8 text-center lg:text-left">
+                    <h2 className="font-headline text-3xl font-bold tracking-tight text-foreground sm:text-4xl">More Than an Organization. A Community.</h2>
+                    <p className="mt-6 text-lg leading-8 text-muted-foreground">
+                        Light on Campus began with a simple idea: college should be about more than just lectures and exams. We saw a need for a space where students could find practical life skills, genuine support, and a community that cheers them on. That's why we're here—a student-run organization dedicated to helping you navigate every part of campus life with confidence and joy.
+                    </p>
+                </div>
+                 <Image
+                    src="https://placehold.co/800x600.png"
+                    data-ai-hint="students community"
+                    alt="A diverse group of students working together and smiling"
+                    width={800}
+                    height={600}
+                    className="w-full rounded-xl shadow-lg"
+                />
+            </div>
+        </section>
+
         <section id="testimonials" className="w-full bg-secondary/50 py-12 md:py-24 lg:py-32">
           <div className="container mx-auto max-w-7xl px-4">
             <div className="mb-12 text-center">
