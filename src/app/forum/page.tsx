@@ -127,7 +127,7 @@ export default function ForumPage() {
                   <div className="flex flex-wrap items-center justify-between mt-2 text-sm text-muted-foreground gap-x-4 gap-y-2">
                     <div className="flex items-center gap-2">
                        <Avatar className="h-6 w-6">
-                        <AvatarImage src={`https://placehold.co/24x24.png`} data-ai-hint="student portrait" />
+                        <AvatarImage src={`/images/light-on-campus-11.png`} data-ai-hint="student portrait" />
                         <AvatarFallback>{thread.author.split(' ').map(n => n[0]).join('')}</AvatarFallback>
                       </Avatar>
                       <span>Posted by {thread.author}</span>

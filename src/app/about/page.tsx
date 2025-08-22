@@ -18,7 +18,7 @@ export default function AboutPage() {
         {/* Image Section */}
         <div className="mt-16">
           <Image
-            src="https://placehold.co/1200x600.png"
+            src="/images/light-on-campus-4.jpg"
             data-ai-hint="university campus students"
             alt="Students gathered on campus with lights"
             width={1200}
@@ -58,7 +58,7 @@ export default function AboutPage() {
                 </p>
             </div>
              <Image
-                src="https://placehold.co/800x600.png"
+                src="/images/light-on-campus-5.jpg"
                 data-ai-hint="students community"
                 alt="A diverse group of students working together and smiling"
                 width={800}

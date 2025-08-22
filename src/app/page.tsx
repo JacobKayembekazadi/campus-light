@@ -80,7 +80,7 @@ export default function Home() {
       <main className="flex-1">
         <section className="relative w-full h-[85vh] min-h-[500px] max-h-[800px] flex items-center justify-center text-white">
           <Image
-            src="https://placehold.co/1600x900.png"
+            src="/images/light-on-campus-1.png"
             alt="A group of diverse students celebrating on a university campus at sunset."
             data-ai-hint="diverse students celebrating"
             fill
@@ -154,7 +154,7 @@ export default function Home() {
                 </div>
                  <div className="order-1 lg:order-2">
                     <Image
-                        src="https://placehold.co/800x600.png"
+                        src="/images/light-on-campus-2.png"
                         data-ai-hint="students community"
                         alt="A diverse group of students working together and smiling"
                         width={800}
@@ -183,7 +183,7 @@ export default function Home() {
                           <blockquote className="text-lg mb-6 flex-grow">"{testimonial.testimonial}"</blockquote>
                           <div className="flex items-center gap-4">
                             <Avatar>
-                              <AvatarImage src={`https://placehold.co/40x40.png`} data-ai-hint="student portrait" />
+                              <AvatarImage src={`/images/light-on-campus-3.jpg`} data-ai-hint="student portrait" />
                               <AvatarFallback>{testimonial.name.split(' ').map(n => n[0]).join('')}</AvatarFallback>
                             </Avatar>
                             <div>

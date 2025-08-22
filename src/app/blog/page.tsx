@@ -12,7 +12,7 @@ const posts = [
     author: "Academic Skills Team",
     date: "2024-10-01",
     category: "Academic Skills",
-    image: "https://placehold.co/600x400.png",
+    image: "/images/light-on-campus-8.jpg",
     dataAiHint: "students studying library"
   },
   {
@@ -22,7 +22,7 @@ const posts = [
     author: "Career Services",
     date: "2024-09-25",
     category: "Workplace Etiquette",
-    image: "https://placehold.co/600x400.png",
+    image: "/images/light-on-campus-8.jpg",
     dataAiHint: "modern office people"
   },
   {
@@ -32,7 +32,7 @@ const posts = [
     author: "Freshman Faith",
     date: "2024-09-20",
     category: "Comedy Corner",
-    image: "https://placehold.co/600x400.png",
+    image: "/images/light-on-campus-8.jpg",
     dataAiHint: "university dorm room"
   },
 ];
@@ -64,7 +64,7 @@ export default function BlogPage() {
               <CardFooter className="p-6 pt-0">
                 <div className="flex items-center gap-3">
                   <Avatar className="h-8 w-8">
-                     <AvatarImage src={`https://placehold.co/32x32.png`} data-ai-hint="writer portrait" />
+                     <AvatarImage src={`/images/light-on-campus-7.jpg`} data-ai-hint="writer portrait" />
                     <AvatarFallback>{post.author.split(' ').map(n=>n[0]).join('')}</AvatarFallback>
                   </Avatar>
                   <div>

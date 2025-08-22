@@ -10,7 +10,7 @@ const postData: { [key: string]: any } = {
     author: "Academic Skills Team",
     date: "2024-10-01",
     category: "Academic Skills",
-    image: "https://placehold.co/1200x600.png",
+    image: "/images/light-on-campus-9.jpg",
     dataAiHint: "university library students",
     content: `
       <p class="text-lg text-muted-foreground leading-relaxed">The pressure of final exams can be overwhelming. But with the right strategies, you can study smarter, not harder. Here are ten study hacks backed by science to help you conquer exam season.</p>
@@ -32,7 +32,7 @@ const postData: { [key: string]: any } = {
     author: "System",
     date: new Date().toISOString(),
     category: "Error",
-    image: "https://placehold.co/1200x600.png",
+    image: "/images/light-on-campus-9.jpg",
     dataAiHint: "empty classroom",
     content: `<p class="text-lg text-muted-foreground leading-relaxed">The post you are looking for could not be found. It might have been moved or deleted.</p>`
   }
@@ -51,7 +51,7 @@ export default function BlogPostPage({ params }: { params: { slug: string } }) {
         </h1>
         <div className="flex items-center justify-center gap-3 mt-6">
           <Avatar className="h-10 w-10">
-            <AvatarImage src={`https://placehold.co/40x40.png`} data-ai-hint="writer portrait" />
+            <AvatarImage src={`/images/light-on-campus-10.jpg`} data-ai-hint="writer portrait" />
             <AvatarFallback>{post.author.split(' ').map((n: string)=>n[0]).join('')}</AvatarFallback>
           </Avatar>
           <div>
